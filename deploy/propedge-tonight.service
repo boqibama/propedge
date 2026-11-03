@@ -1,0 +1,21 @@
+# One game night: backfill (ESPN-only if stats.nba.com is blocked) → wait for tip-off → poll + record →
+# nightly reports. Started each morning by propedge-tonight.timer; restarted if it crashes mid-night
+# (a restart mid-game is safe: the first snapshot of a game is never an event).
+[Unit]
+Description=propedge: tonight's NBA poll (paper only)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/propedge
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/ubuntu/propedge/.venv/bin/python -m propedge tonight
+Restart=on-failure
+RestartSec=60
+# Output (incl. the nightly rules-report) goes to the journal: journalctl -u propedge-tonight
+# and to data/logs/propedge.log through the app's own logging.
+
+[Install]
+WantedBy=multi-user.target

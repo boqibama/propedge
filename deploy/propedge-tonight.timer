@@ -1,0 +1,11 @@
+# Every day at 10:00 Pacific. `tonight` then waits until 90 min before the first tip-off on its own
+# (weekend games can start ~12:30 PT). Persistent: if the server was down at 10:00, it runs at boot.
+[Unit]
+Description=propedge: start tonight's poll every morning
+
+[Timer]
+OnCalendar=*-*-* 10:00:00 America/Los_Angeles
+Persistent=true
+
+[Install]
+WantedBy=timers.target
