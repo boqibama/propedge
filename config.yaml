@@ -1,0 +1,274 @@
+# All thresholds and settings live here. No magic numbers in code.
+# Sections marked "(Phase N)" are placeholders that later phases will start using.
+
+paths:
+  data_dir: data
+  database_url: sqlite:///data/propedge.sqlite   # swap for a Postgres URL later
+  http_cache: data/cache/http_cache              # requests-cache SQLite file (".sqlite" is added)
+  samples_dir: data/samples                      # raw API responses saved by the smoke test
+  log_file: data/logs/propedge.log
+
+logging:
+  level: INFO
+  max_bytes: 5000000      # rotate the log file at ~5 MB
+  backups: 3
+
+# Per-source HTTP behaviour. Each source gets its own rate limit and retry policy.
+#   min_interval_s : minimum seconds between two requests to this source
+#   timeout_s      : give up on a single request after this long
+#   max_retries    : extra attempts after the first one (only for timeouts / 429 / 5xx)
+#   backoff_s      : first retry waits this long, then doubles each time
+#   cache_ttl_s    : how long a response may be reused from the local cache (0 = never cache)
+sources:
+  nba_stats:        # stats.nba.com via nba_api (standard nba_api headers). Throttles hard.
+    min_interval_s: 1.5
+    timeout_s: 60
+    max_retries: 2
+    backoff_s: 5
+    cache_ttl_s: 86400
+  nba_live:         # cdn.nba.com live JSON — blocked on the current network; kept for the smoke test
+    min_interval_s: 0.5
+    timeout_s: 10
+    max_retries: 0
+    backoff_s: 1
+    cache_ttl_s: 0
+  espn:             # site.api.espn.com — live box score + play-by-play (unofficial, no key)
+    min_interval_s: 0.5
+    timeout_s: 10
+    max_retries: 2
+    backoff_s: 1
+    cache_ttl_s: 0
+  kalshi:           # api.elections.kalshi.com — public market data (no key needed to read)
+    min_interval_s: 0.2
+    timeout_s: 10
+    max_retries: 2
+    backoff_s: 1
+    cache_ttl_s: 0
+  odds_api:         # api.the-odds-api.com — every call can cost credits, so cache briefly
+    min_interval_s: 1.0
+    timeout_s: 15
+    max_retries: 1
+    backoff_s: 2
+    cache_ttl_s: 30
+
+history:
+  seasons: ["2024-25", "2025-26", "2026-27"]   # 2024-25 = model tuning, 2025-26 = backtest, 2026-27 = live
+  backfill_matchups_for: ["2026-27"] # one stats.nba.com call per game, so only the current season by default
+  spreads_for: ["2025-26", "2026-27"]  # closing spread/total per game (1 ESPN request per game). ESPN has no lines for 2024-25.
+  schedule_days_back: 3              # ESPN scoreboard days to (re)load behind today…
+  schedule_days_ahead: 7             # …and ahead (rest days / back-to-backs need upcoming games)
+
+live_feed:
+  provider: espn               # LiveStatsProvider implementation to use
+  poll_interval_s: 20          # how often to poll box score + play-by-play for each live game
+  scoreboard_interval_s: 60    # how often to re-check which games are live
+  scoreboard_retry_s: 15       # …and how soon to retry after a failed check (a failure is never "no games")
+  gap_warn_s: 120              # warn if the poller loop stalls this long (computer asleep / network down)
+  # Phase 0 probe: ESPN's newest play was 36–75 s old (median 58 s) during live play.
+  # Phase 1: per-play delivery delay median ~43 s; the box-score SCORE updates ~20–40 s before
+  # the play-by-play does; timeouts/reviews create 2–3 min gaps with no plays at all.
+  stale_after_s: 90            # newest play older than this WHILE the game clock is moving => lagging
+  stale_hard_after_s: 300      # older than this => lagging even if the clock looks stopped (frozen feed)
+
+recording:                     # raw payloads saved by `poll --record` / `tonight` (for replay)
+  min_interval_s: {kalshi: 15} # the DB keeps every 3 s quote change; raw files only every 15 s
+
+tonight:                       # `python -m propedge tonight`
+  start_before_first_tip_min: 90   # start early to record pre-game Kalshi prices
+  wait_log_every_min: 15
+  scoreboard_retries: 5        # an empty/failed scoreboard is retried before falling back to the DB schedule
+  scoreboard_retry_s: 60
+  nba_probe_timeout_s: 15      # quick stats.nba.com check before backfill (cloud servers are often blocked)
+
+odds:
+  provider: kalshi             # kalshi | mock   (the_odds_api is comparison-only)
+  poll_interval_s: 30          # Kalshi market list for the stats we model (pre-game)
+  live_poll_interval_s: 3      # …while any game is live: one request returns the whole series, so this
+                               #    is ~0.3 requests/s — far below Kalshi's limits (~20 reads/s)
+  stale_after_s: 90            # (Phase 4) ignore a quote we haven't re-confirmed within this long
+  kalshi:
+    base_url: https://api.elections.kalshi.com/trade-api/v2
+    # Thin slice: points only. Other series: KXNBAREB, KXNBAAST, KXNBA3PT, KXNBAPRA, ...
+    series: {pts: KXNBAPTS}
+    page_size: 1000
+    fees:
+      # fee per order = round_up(coef × fee_multiplier × contracts × P × (1 − P), to the cent)
+      # fee_type and fee_multiplier are read per series from Kalshi's API.
+      # Coefficients from secondary sources + Kalshi Help Center; confirm against
+      # Kalshi's official fee schedule PDF.
+      taker_coef: 0.07
+      maker_coef: 0.0175       # only charged when fee_type == quadratic_with_maker_fees
+      fee_type: {pts: quadratic}   # from GET /series/KXNBAPTS, checked 2026-10-25: taker fees only (DECISIONS #64)
+      round_to: 0.01
+    order_contracts: 10        # order size used to compute fee-per-contract (rounding matters)
+  liquidity:                   # (Phase 4) skip markets thinner than this
+    max_spread: 0.06           # yes_ask − yes_bid, in dollars (Phase 0 median was 0.05)
+    min_ask_size: 10           # contracts available at the ask
+  the_odds_api:                # comparison only — no live polling on the free tier
+    sport_key: basketball_nba
+    regions: [us]
+    markets: [player_points]
+    odds_format: american
+    monthly_credit_budget: 500
+
+model:                         # (Phase 2–3)
+  n_sims: 10000
+  random_seed: 42
+  ladder_lines: [10, 15, 20, 25, 30]   # Kalshi-style "N+" thresholds for calibration checks
+  points:                      # pre-game points model (models/points_model.py).
+    # Values tuned on 2024-25 with `python -m propedge backtest-points --tune` (2026-10-22),
+    # then frozen and scored once on 2025-26. Re-tune when the model changes.
+    # history windows (in games; exponentially weighted, so this is the half-life)
+    min_halflife_games: 3
+    season_seed_games: 5       # minutes restart each season from last season's mpg, worth this many games
+                               # (NOT tuned: 2024-25 has no prior season in our data; chosen up front)
+    rate_halflife_games: 15
+    # confidence rules — low-confidence players get wider uncertainty and are never flagged in v1
+    rookie_games: 15           # first N career games of a rookie
+    new_team_games: 10         # first N games with a new team
+    return_missed_games: 5     # back after missing ≥ N team games in a row…
+    return_window_games: 3     # …low-confidence for the first N games back
+    min_minutes_sample: 200    # fewer career minutes in our data than this
+    team_new_share_threshold: 0.20  # ≥ this share of a team's expected scoring is new to the team…
+                                    # …-> its other players are low-confidence for its first new_team_games games
+    low_conf_widen: 1.25        # multiply minutes sd and rate uncertainty by this
+    # team context
+    team_shrink_games: 10      # season-to-date team ratings are shrunk toward league avg as if N extra avg games
+    home_adv_points: 2.0       # home edge used when no real spread is available (net-rating estimate)
+    missing_recent_games: 3    # "newly missing" = played in one of the team's last N games…
+    missing_min_mpg: 20        # …with at least this many minutes
+    # minutes
+    max_minutes: 44
+    margin_sd: 12.5            # spread of final margins around the expected margin (points)
+    blowout_margin: 18         # "blowout" = final margin beyond this
+    bench_minutes: 12          # ≤ this many minutes = bench role, ≥ starter_minutes = starter role
+    starter_minutes: 30
+    b2b_minutes_drop: 0.0
+    blowout_starter_drop: 0.2
+    blowout_bench_gain: 0.0
+    missing_minutes_bump: 0.1
+    min_sd_floor: 4.0
+    early_exit_prob: 0.02      # chance of leaving early (injury/ejection): minutes uniform on 1..projection
+    min_center_bump: 0.02       # normal-night minutes = recent average × (1 + this) (short nights are the exit part)
+    min_sd_scale: 0.8
+    # scoring rate
+    baseline_rate_intercept: 0.1635   # role baseline: points/min ≈ intercept + slope × minutes
+    baseline_rate_slope: 0.01187
+    shrink_minutes: 50        # prior strength: the baseline counts like this many minutes of evidence
+    evidence_cap_minutes: 2000
+    opp_def_power: 1.0
+    pace_power: 1.0
+    home_rate_bump: 0.0
+    missing_rate_bump: 0.4
+    rate_cv: 0.1              # rate uncertainty for a player with no evidence…
+    rate_cv_floor: 0.06        # …and with lots of evidence
+    phi: 2.4                   # points variance ÷ mean, given minutes (points come in 2s and 3s)…
+    phi_power: -0.45           # …× (mean/10)^phi_power: < 0 = low scorers relatively more erratic than stars
+    # team constraints (scale down only): early-season projections summed to ~150 pts / 260 min per team
+    team_constraints: true
+    team_minutes_cap: 240      # regulation minutes per team
+    team_minutes_method: variance  # excess taken ∝ each player's minutes variance (or "proportional")
+    team_points_share: 1.0     # projected players' points may add up to at most this × the team's expected score
+    # rolling bias correction from this season's settled games (models/bias.py)
+    bias_prior_games: 100     # shrinkage: the correction counts fully only after ≫ this many player-games
+    bias_cap: 0.08             # never move scoring rates by more than ±8% (your call, 10-24; was 2% tuned on 2024-25)
+    bias_by_tier: true         # separate correction per role tier (fitted on settled results only)
+    bias_tier_edges: [18, 26]  # projected minutes: bench < 18 ≤ rotation < 26 ≤ starter
+    bias_window_days: 30       # only results from the last N days of this season
+
+edge:                          # pre-game (Phase 2, paper only) and live (Phase 4)
+  # Until the scoreboard shows we beat Kalshi, most disagreements are model error: flags are
+  # rare by design (a full night should produce only a few). Everything ≥ log_min_edge is still logged.
+  min_edge: 0.12               # model prob − (ask + fee per contract)
+  min_ev_per_dollar: 0.20
+  one_flag_per_player: true    # only the player's best rung can be a flag; other passing rungs = "not_best"
+  log_min_edge: 0.03           # log candidates down to this edge as "below_threshold" (for analysis)
+  pregame_flag_cooldown_min: 30  # don't re-log the same contract/side within this unless edge moved ≥ 2 pts
+  pregame_every_min: 15          # `tonight` re-runs the pre-game comparison this often until tip-off
+  live_flag_cooldown_s: 120      # live: don't re-log the same contract/side/status within this
+  no_flag:
+    after_scoring_play_s: 45   # after the player's points change in our feed (box score — it leads the play-by-play)
+    after_price_move_s: 90     # after a sudden Kalshi move in the player's markets — ≥ worst observed feed lag (75 s)
+    price_move_threshold: 0.05 # a "sudden move" = YES mid moves at least this much…
+    price_move_lookback_s: 120 # …compared with the price this many seconds earlier
+    move_max_spread: 0.10      # ignore rungs wider than this (thin rungs' mids jump without news)
+    # Game-wide: several players in one game moving together = news we haven't seen (injury, ejection).
+    game_move_min_players: 3
+    game_move_threshold: 0.04
+    after_game_move_s: 120
+
+live:                          # live points engine (models/live_points.py) — Phase 3, paper only
+  # live_* / foul_* / exit_* values tuned on 2025-26 games through Dec 31 (`backtest-live --tune`, 2026-10-22)
+  n_sims: 10000
+  every_s: 20                  # re-run for a game at most this often (matches the ESPN poll)
+  live_min_prior: 0.25          # pre-game minutes plan vs tonight's pace: equal weight at frac = this (0.5 = halftime)
+  live_rate_prior_min: 300     # pre-game scoring rate counts as this many minutes of evidence (no hot-hand chasing)
+  live_min_sd_scale: 1.0
+  live_blowout_margin: 20      # "blowout" final margin for the live meter
+  live_blowout_drop: 0.6       # starters lose this share of remaining minutes when the meter is at 100%
+  live_blowout_gain: 0.5       # bench players gain this share
+  foul_limits: [2, 3, 4, 5]    # fouls at which coaches usually sit a player for the rest of Q1..Q4
+  foul_sit_prob: 0.0           # tuned to 0: the 'sits with foul trouble' rule didn't improve predictions
+  exit_after_off_min: 10       # a starter off the floor longer than this (game minutes) may have left…
+  exit_ramp_min: 8             # …reaching exit_max_prob after this many more minutes
+  exit_max_prob: 0.8
+  pf_rate_league: 0.075        # personal fouls per minute, league-typical (prior for each player's rate)
+  pf_rate_prior_min: 300       # strength of that prior, in minutes
+  assumed_feed_delay_s: 50     # backtests use the game state from this long ago (our real ESPN delay)
+  sample_points: [6, 12, 18, 24, 30, 36, 39, 42, 45]   # game minutes at which backtests take a snapshot
+
+live_backtest:
+  season: "2025-26"
+  tune_until: "2025-12-31"     # live settings tuned on these games…
+  test_from: "2026-01-01"      # …and scored once on these
+  tune_every_nth_game: 2       # use every 2nd tune game (speed)
+  tune_sims: 800
+  kalshi_season: "2026-27"     # games with Kalshi markets: live model vs Kalshi mid
+
+events:                        # event-triggered re-pricing in the live engine (paper only)
+  types: [foul4, blowout]      # 4th personal foul; second-half lead first reaching repricing.blowout_lead
+  min_edge: 0.06               # event flags: lower bar than routine ones — the point is to measure the window
+  min_ev_per_dollar: 0.10
+  starter_margin_min: 2        # "starter" for blowout scope = pre-game minutes ≥ starter_minutes − this
+  clv_horizons_s: [60, 120, 300]   # 1-, 2- and 5-minute CLV
+
+event_trades:                  # EXPLORATORY buy-then-sell simulation (`event-trades`); free to change
+  entry_delays_s: [30, 60]     # enter at the ask this long after our data shows the event
+  hold_s: [60, 120, 300]       # sell this long after entry
+  limit_wait_s: 60             # resting limit sell: rests this long, then we hit the bid
+  max_quote_age_s: 30          # a quote counts only if confirmed within this many seconds
+  all_rungs_mid_range: [0.05, 0.95]   # "all rungs": YES mid in this range at entry, not yet decided
+  bootstrap: {n: 2000, level: 0.90, seed: 7}   # interval by independent event
+
+frozen_rules:                  # FROZEN 2026-10-25 (DECISIONS #62). Don't change without the user's OK;
+  judge_from: "2026-10-26"     #   tests/test_frozen_rules.py pins every value. Nights (US-Eastern) counted.
+  entry_delay_s: 60
+  max_quote_age_s: 30
+  blowout_lead: 20             # blowout starts: lead goes from < 20 to ≥ 20…
+  blowout_from_min: 24         # …at game minute ≥ 24 (second half), the first time
+  foul_n: 4
+  rung_max_spread: 0.06        # amendment 2026-10-25 (#62), approved by the user: = odds.liquidity.max_spread
+  rule_a: {event: foul4, max_period: 3, players: fouler, side: "no", rung: closest_to_50, hold_s: 300}
+  rule_b: {event: blowout, players: starter, side: "no", rung: closest_to_50, hold_s: 120}
+  decision_events: 50          # Rule A independent events after today -> decision point (DECISIONS #61)
+
+repricing:                     # edge test: how fast Kalshi reprices after game events (backtest/repricing.py)
+  blowout_lead: 20             # blowout onset = second-half lead first reaches this
+  exit_before_min: 36          # starter "exit" = last check-out before this game minute…
+  exit_max_minutes: 22         # …finishing with at most this many minutes, never returning, not a blowout
+
+backtest:
+  seasons: ["2024-25", "2025-26"]  # data loaded for the points backtest
+  tune_season: "2024-25"           # parameters are tuned here…
+  tune_from: "2024-12-01"          # …from this date (players need some history first)
+  test_season: "2025-26"           # …and scored once here, frozen
+
+alerts:                        # (Phase 5)
+  channels: [discord]          # discord | telegram
+  min_ev_to_alert: 0.08
+  cooldown_s: 600
+
+bankroll:                      # (Phase 8)
+  kelly_fraction: 0.25
+  max_stake_pct: 0.02
+  daily_loss_limit_pct: 0.05
