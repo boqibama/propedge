@@ -1,0 +1,2134 @@
+{
+ "header": {
+  "id": "401909092",
+  "competitions": [
+   {
+    "date": "2026-10-22T02:00Z",
+    "status": {
+     "displayClock": "4:33",
+     "period": 4,
+     "type": {
+      "id": "2",
+      "name": "STATUS_IN_PROGRESS",
+      "state": "in",
+      "completed": false,
+      "description": "In Progress",
+      "detail": "4:33 - 4th Quarter",
+      "shortDetail": "4:33 - 4th",
+      "statusPrimary": "4:33",
+      "statusSecondary": "4th"
+     },
+     "displayPeriod": "4th"
+    },
+    "competitors": [
+     {
+      "homeAway": "home",
+      "score": "118",
+      "team": {
+       "id": "13",
+       "abbreviation": "LAL"
+      }
+     },
+     {
+      "homeAway": "away",
+      "score": "90",
+      "team": {
+       "id": "9",
+       "abbreviation": "GS"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "boxscore": {
+  "players": [
+   {
+    "team": {
+     "abbreviation": "GS"
+    },
+    "statistics": [
+     {
+      "keys": [
+       "minutes",
+       "points",
+       "fieldGoalsMade-fieldGoalsAttempted",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+       "freeThrowsMade-freeThrowsAttempted",
+       "rebounds",
+       "assists",
+       "turnovers",
+       "steals",
+       "blocks",
+       "offensiveRebounds",
+       "defensiveRebounds",
+       "fouls",
+       "plusMinus"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "6589",
+         "displayName": "Draymond Green",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "21",
+         "2",
+         "1-4",
+         "0-1",
+         "0-0",
+         "4",
+         "8",
+         "4",
+         "1",
+         "1",
+         "0",
+         "4",
+         "3",
+         "-22"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4997536",
+         "displayName": "Gui Santos",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "25",
+         "12",
+         "5-10",
+         "1-3",
+         "1-2",
+         "5",
+         "0",
+         "0",
+         "1",
+         "0",
+         "2",
+         "3",
+         "1",
+         "-14"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "5175737",
+         "displayName": "Yaxel Lendeborg",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "29",
+         "12",
+         "5-11",
+         "1-4",
+         "1-3",
+         "3",
+         "2",
+         "0",
+         "1",
+         "0",
+         "2",
+         "1",
+         "4",
+         "-21"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3975",
+         "displayName": "Stephen Curry",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "21",
+         "23",
+         "7-15",
+         "2-7",
+         "7-7",
+         "2",
+         "1",
+         "2",
+         "2",
+         "0",
+         "1",
+         "1",
+         "2",
+         "-22"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4066436",
+         "displayName": "De'Anthony Melton",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "21",
+         "0",
+         "0-2",
+         "0-2",
+         "0-0",
+         "2",
+         "2",
+         "2",
+         "0",
+         "0",
+         "1",
+         "1",
+         "1",
+         "-16"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "2990969",
+         "displayName": "Georges Niang",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "18",
+         "7",
+         "3-8",
+         "0-4",
+         "1-1",
+         "2",
+         "2",
+         "2",
+         "2",
+         "0",
+         "0",
+         "2",
+         "0",
+         "-14"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4703396",
+         "displayName": "Graham Ike",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "7",
+         "4",
+         "1-2",
+         "1-1",
+         "1-1",
+         "0",
+         "1",
+         "0",
+         "2",
+         "1",
+         "0",
+         "0",
+         "2",
+         "+6"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4897449",
+         "displayName": "Malevy Leons",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "4",
+         "0",
+         "0-2",
+         "0-1",
+         "0-0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "+3"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3213",
+         "displayName": "Al Horford",
+         "position": {
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "17",
+         "0",
+         "0-3",
+         "0-3",
+         "0-0",
+         "4",
+         "2",
+         "1",
+         "1",
+         "0",
+         "1",
+         "3",
+         "0",
+         "-13"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3134903",
+         "displayName": "Gary Payton II",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "15",
+         "8",
+         "4-7",
+         "0-2",
+         "0-0",
+         "1",
+         "0",
+         "2",
+         "0",
+         "0",
+         "1",
+         "0",
+         "1",
+         "-20"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4397040",
+         "displayName": "Brandon Williams",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "18",
+         "14",
+         "3-12",
+         "1-3",
+         "7-7",
+         "4",
+         "3",
+         "2",
+         "3",
+         "0",
+         "2",
+         "2",
+         "1",
+         "-7"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4433149",
+         "displayName": "LJ Cryer",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "4",
+         "6",
+         "2-3",
+         "2-3",
+         "0-0",
+         "0",
+         "1",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "+3"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4897262",
+         "displayName": "Will Richard",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "16",
+         "2",
+         "1-2",
+         "0-0",
+         "0-0",
+         "3",
+         "1",
+         "0",
+         "1",
+         "0",
+         "2",
+         "1",
+         "4",
+         "-7"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3102531",
+         "displayName": "Kristaps Porzingis",
+         "position": {
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C"
+         }
+        },
+        "starter": false,
+        "didNotPlay": true,
+        "stats": []
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "team": {
+     "abbreviation": "LAL"
+    },
+    "statistics": [
+     {
+      "keys": [
+       "minutes",
+       "points",
+       "fieldGoalsMade-fieldGoalsAttempted",
+       "threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+       "freeThrowsMade-freeThrowsAttempted",
+       "rebounds",
+       "assists",
+       "turnovers",
+       "steals",
+       "blocks",
+       "offensiveRebounds",
+       "defensiveRebounds",
+       "fouls",
+       "plusMinus"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "4433137",
+         "displayName": "Ziaire Williams",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "24",
+         "9",
+         "4-7",
+         "1-2",
+         "0-0",
+         "2",
+         "4",
+         "1",
+         "1",
+         "0",
+         "1",
+         "1",
+         "4",
+         "+13"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4433136",
+         "displayName": "Walker Kessler",
+         "position": {
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "30",
+         "26",
+         "12-12",
+         "0-0",
+         "2-4",
+         "9",
+         "1",
+         "2",
+         "0",
+         "2",
+         "2",
+         "7",
+         "1",
+         "+24"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3907498",
+         "displayName": "Matisse Thybulle",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "23",
+         "3",
+         "1-4",
+         "1-2",
+         "0-0",
+         "3",
+         "1",
+         "1",
+         "1",
+         "1",
+         "1",
+         "2",
+         "3",
+         "+12"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3945274",
+         "displayName": "Luka Doncic",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "30",
+         "28",
+         "7-18",
+         "5-12",
+         "9-9",
+         "8",
+         "7",
+         "6",
+         "3",
+         "0",
+         "0",
+         "8",
+         "1",
+         "+31"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4066457",
+         "displayName": "Austin Reaves",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": true,
+        "didNotPlay": false,
+        "stats": [
+         "32",
+         "23",
+         "6-11",
+         "1-3",
+         "10-10",
+         "4",
+         "6",
+         "4",
+         "2",
+         "1",
+         "1",
+         "3",
+         "2",
+         "+25"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3155535",
+         "displayName": "Kevon Looney",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "10",
+         "4",
+         "2-2",
+         "0-0",
+         "0-0",
+         "3",
+         "0",
+         "0",
+         "0",
+         "0",
+         "1",
+         "2",
+         "1",
+         "0"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4278580",
+         "displayName": "Sandro Mamukelashvili",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "18",
+         "5",
+         "2-3",
+         "0-1",
+         "1-2",
+         "4",
+         "1",
+         "0",
+         "2",
+         "0",
+         "2",
+         "2",
+         "2",
+         "+18"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4592691",
+         "displayName": "Jake LaRavia",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "18",
+         "10",
+         "4-5",
+         "2-3",
+         "0-0",
+         "2",
+         "2",
+         "1",
+         "1",
+         "0",
+         "0",
+         "2",
+         "3",
+         "+14"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4397014",
+         "displayName": "Quentin Grimes",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "27",
+         "10",
+         "4-7",
+         "0-2",
+         "2-2",
+         "3",
+         "4",
+         "0",
+         "1",
+         "1",
+         "0",
+         "3",
+         "2",
+         "+20"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4683774",
+         "displayName": "Bronny James",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "2",
+         "0",
+         "0-0",
+         "0-0",
+         "0-0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "1",
+         "-4"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4702972",
+         "displayName": "Chris Manon",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "1",
+         "0",
+         "0-0",
+         "0-0",
+         "0-0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "0",
+         "1",
+         "-4"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4868423",
+         "displayName": "Jaden Hardy",
+         "position": {
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G"
+         }
+        },
+        "starter": false,
+        "didNotPlay": false,
+        "stats": [
+         "2",
+         "0",
+         "0-1",
+         "0-0",
+         "0-0",
+         "1",
+         "0",
+         "1",
+         "0",
+         "0",
+         "0",
+         "1",
+         "1",
+         "-4"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "4278077",
+         "displayName": "Jarred Vanderbilt",
+         "position": {
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F"
+         }
+        },
+        "starter": false,
+        "didNotPlay": true,
+        "stats": []
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "pickcenter": [
+  {
+   "details": "LAL -6.5",
+   "spread": -6.5,
+   "overUnder": 233.5
+  }
+ ],
+ "plays": [
+  {
+   "id": "401909092634",
+   "sequenceNumber": "634",
+   "type": {
+    "id": "16",
+    "text": "Full Timeout"
+   },
+   "text": "Lakers Full timeout",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "8:00"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": null,
+   "wallclock": "2026-10-22T04:17:51Z"
+  },
+  {
+   "id": "401909092635",
+   "sequenceNumber": "635",
+   "type": {
+    "id": "95",
+    "text": "Layup Shot"
+   },
+   "text": "Graham Ike blocks Ziaire Williams 's 5-foot layup",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:37"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433137"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4703396"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:21:42Z"
+  },
+  {
+   "id": "401909092636",
+   "sequenceNumber": "636",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "De'Anthony Melton defensive rebound",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:37"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4066436"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:21:42Z"
+  },
+  {
+   "id": "401909092638",
+   "sequenceNumber": "638",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "De'Anthony Melton misses 25-foot three point jumper",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:27"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4066436"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:21:52Z"
+  },
+  {
+   "id": "401909092639",
+   "sequenceNumber": "639",
+   "type": {
+    "id": "156",
+    "text": "Offensive Rebound"
+   },
+   "text": "Warriors offensive team rebound",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:27"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": null,
+   "wallclock": "2026-10-22T04:21:52Z"
+  },
+  {
+   "id": "401909092640",
+   "sequenceNumber": "640",
+   "type": {
+    "id": "43",
+    "text": "Loose Ball Foul"
+   },
+   "text": "Walker Kessler loose ball foul",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:25"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433136"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:21:54Z"
+  },
+  {
+   "id": "401909092642",
+   "sequenceNumber": "642",
+   "type": {
+    "id": "114",
+    "text": "Turnaround Jump Shot"
+   },
+   "text": "Malevy Leons misses 5-foot turnaround jump shot",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:21"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4897449"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:16Z"
+  },
+  {
+   "id": "401909092643",
+   "sequenceNumber": "643",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "Austin Reaves defensive rebound",
+   "awayScore": 83,
+   "homeScore": 111,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:21"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4066457"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:16Z"
+  },
+  {
+   "id": "401909092644",
+   "sequenceNumber": "644",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "Ziaire Williams makes 23-foot three point jumper (Austin Reaves assists)",
+   "awayScore": 83,
+   "homeScore": 114,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "7:10"
+   },
+   "scoringPlay": true,
+   "scoreValue": 3,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433137"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4066457"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:27Z"
+  },
+  {
+   "id": "401909092646",
+   "sequenceNumber": "646",
+   "type": {
+    "id": "131",
+    "text": "Pullup Jump Shot"
+   },
+   "text": "Will Richard misses 11-foot pullup jump shot",
+   "awayScore": 83,
+   "homeScore": 114,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:53"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4897262"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:44Z"
+  },
+  {
+   "id": "401909092647",
+   "sequenceNumber": "647",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "Austin Reaves defensive rebound",
+   "awayScore": 83,
+   "homeScore": 114,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:53"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4066457"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:44Z"
+  },
+  {
+   "id": "401909092648",
+   "sequenceNumber": "648",
+   "type": {
+    "id": "44",
+    "text": "Shooting Foul"
+   },
+   "text": "Graham Ike shooting foul",
+   "awayScore": 83,
+   "homeScore": 114,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4703396"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:22:51Z"
+  },
+  {
+   "id": "401909092650",
+   "sequenceNumber": "650",
+   "type": {
+    "id": "98",
+    "text": "Free Throw - 1 of 2"
+   },
+   "text": "Walker Kessler makes free throw 1 of 2",
+   "awayScore": 83,
+   "homeScore": 115,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": true,
+   "scoreValue": 1,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433136"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:23:23Z"
+  },
+  {
+   "id": "401909092651",
+   "sequenceNumber": "651",
+   "type": {
+    "id": "99",
+    "text": "Free Throw - 2 of 2"
+   },
+   "text": "Walker Kessler makes free throw 2 of 2",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": true,
+   "scoreValue": 1,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433136"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:23:46Z"
+  },
+  {
+   "id": "401909092654",
+   "sequenceNumber": "654",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Jaden Hardy enters the game for Quentin Grimes",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4868423"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4397014"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:23:23Z"
+  },
+  {
+   "id": "401909092655",
+   "sequenceNumber": "655",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Bronny James enters the game for Austin Reaves",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4683774"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4066457"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:23:23Z"
+  },
+  {
+   "id": "401909092657",
+   "sequenceNumber": "657",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Georges Niang enters the game for De'Anthony Melton",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:46"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "2990969"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4066436"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:23:23Z"
+  },
+  {
+   "id": "401909092658",
+   "sequenceNumber": "658",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "Malevy Leons misses 24-foot three point jumper",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:29"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4897449"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:24:05Z"
+  },
+  {
+   "id": "401909092659",
+   "sequenceNumber": "659",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "Walker Kessler defensive rebound",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:29"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433136"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:24:05Z"
+  },
+  {
+   "id": "401909092660",
+   "sequenceNumber": "660",
+   "type": {
+    "id": "63",
+    "text": "Lost Ball Turnover"
+   },
+   "text": "Jaden Hardy lost ball turnover (Will Richard steals)",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:11"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4868423"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4897262"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:24:23Z"
+  },
+  {
+   "id": "401909092665",
+   "sequenceNumber": "665",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Kevon Looney enters the game for Matisse Thybulle",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:05"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "3155535"
+     }
+    },
+    {
+     "athlete": {
+      "id": "3907498"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:24:28Z"
+  },
+  {
+   "id": "401909092666",
+   "sequenceNumber": "666",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Jake LaRavia enters the game for Walker Kessler",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "6:05"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4592691"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4433136"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:24:28Z"
+  },
+  {
+   "id": "401909092667",
+   "sequenceNumber": "667",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "Graham Ike misses 12-foot jumper",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:52"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4703396"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:02Z"
+  },
+  {
+   "id": "401909092668",
+   "sequenceNumber": "668",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "Jaden Hardy defensive rebound",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:52"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4868423"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:02Z"
+  },
+  {
+   "id": "401909092669",
+   "sequenceNumber": "669",
+   "type": {
+    "id": "63",
+    "text": "Lost Ball Turnover"
+   },
+   "text": "Jake LaRavia lost ball turnover (Graham Ike steals)",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:42"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4592691"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4703396"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:13Z"
+  },
+  {
+   "id": "401909092671",
+   "sequenceNumber": "671",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "LJ Cryer misses 26-foot three point jumper",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:36"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433149"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:18Z"
+  },
+  {
+   "id": "401909092672",
+   "sequenceNumber": "672",
+   "type": {
+    "id": "156",
+    "text": "Offensive Rebound"
+   },
+   "text": "Will Richard offensive rebound",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:36"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4897262"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:18Z"
+  },
+  {
+   "id": "401909092673",
+   "sequenceNumber": "673",
+   "type": {
+    "id": "22",
+    "text": "Personal Take Foul"
+   },
+   "text": "Bronny James personal take foul",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:34"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4683774"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:20Z"
+  },
+  {
+   "id": "401909092675",
+   "sequenceNumber": "675",
+   "type": {
+    "id": "16",
+    "text": "Full Timeout"
+   },
+   "text": "Lakers Full timeout",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:34"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": null,
+   "wallclock": "2026-10-22T04:25:20Z"
+  },
+  {
+   "id": "401909092677",
+   "sequenceNumber": "677",
+   "type": {
+    "id": "584",
+    "text": "Substitution"
+   },
+   "text": "Chris Manon enters the game for Jake LaRavia",
+   "awayScore": 83,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:34"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4702972"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4592691"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:25:20Z"
+  },
+  {
+   "id": "401909092678",
+   "sequenceNumber": "678",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "LJ Cryer makes 26-foot three point jumper (Will Richard assists)",
+   "awayScore": 86,
+   "homeScore": 116,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:29"
+   },
+   "scoringPlay": true,
+   "scoreValue": 3,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433149"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4897262"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:29:02Z"
+  },
+  {
+   "id": "401909092680",
+   "sequenceNumber": "680",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "Ziaire Williams makes 19-foot jumper",
+   "awayScore": 86,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "5:07"
+   },
+   "scoringPlay": true,
+   "scoreValue": 2,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4433137"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:29:24Z"
+  },
+  {
+   "id": "401909092681",
+   "sequenceNumber": "681",
+   "type": {
+    "id": "110",
+    "text": "Driving Layup Shot"
+   },
+   "text": "Georges Niang makes driving layup (Graham Ike assists)",
+   "awayScore": 88,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:56"
+   },
+   "scoringPlay": true,
+   "scoreValue": 2,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "2990969"
+     }
+    },
+    {
+     "athlete": {
+      "id": "4703396"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:29:37Z"
+  },
+  {
+   "id": "401909092682",
+   "sequenceNumber": "682",
+   "type": {
+    "id": "44",
+    "text": "Shooting Foul"
+   },
+   "text": "Chris Manon shooting foul",
+   "awayScore": 88,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:56"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4702972"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:29:37Z"
+  },
+  {
+   "id": "401909092684",
+   "sequenceNumber": "684",
+   "type": {
+    "id": "97",
+    "text": "Free Throw - 1 of 1"
+   },
+   "text": "Georges Niang makes free throw 1 of 1",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:56"
+   },
+   "scoringPlay": true,
+   "scoreValue": 1,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "2990969"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:29:37Z"
+  },
+  {
+   "id": "401909092686",
+   "sequenceNumber": "686",
+   "type": {
+    "id": "121",
+    "text": "Fade Away Jump Shot"
+   },
+   "text": "Jaden Hardy misses 15-foot fade away jump shot",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:41"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4868423"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:30:18Z"
+  },
+  {
+   "id": "401909092687",
+   "sequenceNumber": "687",
+   "type": {
+    "id": "155",
+    "text": "Defensive Rebound"
+   },
+   "text": "Will Richard defensive rebound",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:41"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "4897262"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:30:18Z"
+  },
+  {
+   "id": "401909092688",
+   "sequenceNumber": "688",
+   "type": {
+    "id": "92",
+    "text": "Jump Shot"
+   },
+   "text": "Georges Niang misses 26-foot three point jumper",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:34"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": [
+    {
+     "athlete": {
+      "id": "2990969"
+     }
+    }
+   ],
+   "wallclock": "2026-10-22T04:30:26Z"
+  },
+  {
+   "id": "401909092689",
+   "sequenceNumber": "689",
+   "type": {
+    "id": "156",
+    "text": "Offensive Rebound"
+   },
+   "text": "Warriors offensive team rebound",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:34"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "9"
+   },
+   "participants": null,
+   "wallclock": "2026-10-22T04:30:26Z"
+  },
+  {
+   "id": "401909092690",
+   "sequenceNumber": "690",
+   "type": {
+    "id": "45",
+    "text": "Personal Foul"
+   },
+   "text": "personal foul",
+   "awayScore": 89,
+   "homeScore": 118,
+   "period": {
+    "number": 4,
+    "displayValue": "4th Quarter"
+   },
+   "clock": {
+    "displayValue": "4:33"
+   },
+   "scoringPlay": false,
+   "scoreValue": 0,
+   "team": {
+    "id": "13"
+   },
+   "participants": null,
+   "wallclock": "2026-10-22T04:30:32Z"
+  }
+ ]
+}
